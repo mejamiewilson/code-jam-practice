@@ -8,11 +8,11 @@ var cookie = function(set) {
 
 	while (rate / set.F < (set.X / set.C) -1) {
 		
-		seconds = seconds + ( set.C / rate );
-		rate = rate + set.F;
+		seconds += ( set.C / rate );
+		rate += set.F;
 		
 	}
-	seconds = seconds + set.X / rate;
+	seconds += set.X / rate;
 	
 	return seconds;
 
