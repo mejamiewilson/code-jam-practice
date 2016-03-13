@@ -59,7 +59,6 @@ var run = function(in_file, out_file) {
 	var N = parseInt(file[0]);
 	file = file.splice(1, file.length);
 
-	/* each three lines after, C I P are a set */
 	var sets = [];
 	for(var i = 0; i < N; i++) {
 		var line = file[i].split(' ');
