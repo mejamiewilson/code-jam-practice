@@ -7,9 +7,9 @@ var minesweeper = function(set) {
 	// set.H = height,
 	// set.M = number of mines
 
-	var result = [];
-	var board = [];
-	console.log(set);
+	var result = [],
+		board = [],
+		blanks = 0;
 
 	for(var i = 0; i < set.W * set.H; i++) {
 		if (i > set.W * set.H - set.M - 1) {
@@ -18,19 +18,14 @@ var minesweeper = function(set) {
 		} else {
 			// all others are .
 			board.push('.');
+			blanks++;
 		}
 	}
-
-	//fail if only 2 or 3 blanks
-	//var blanks = (board.join('').match(/\./g) || []).length;
 
 	// *****
 	// Need to work out what counts as a fail
 	// *****
 
-	//Blanks can only be 0 - 8 inclusive, so anything with a lengh of 9
-	//between 'c' and '*' must be a fail
-	
 	// Getting a success ready to print
 	for(var i = 0; i < set.W; i++) {
 		var r = board.slice(i * set.H, i * set.H + set.H).join('');
