@@ -21,9 +21,6 @@ var cookie = function(set) {
 
 };
 
-//while((X/speed) > (C/speed) + (X/(speed + F))) {
-
-
 /* File Function */
 var run = function(in_file, out_file) { 
 
