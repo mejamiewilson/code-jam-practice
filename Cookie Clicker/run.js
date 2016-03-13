@@ -6,7 +6,10 @@ var cookie = function(set) {
 	var seconds = 0;
 	var rate = 2;
 
-	while (rate / set.F < (set.X / set.C) -1) {
+	//while hitting the total at the current rate is bigger than
+	//a factory at the current rate + the total at the next rate
+
+	while (set.X / rate > (set.C / rate) + (set.X/(rate + set.F))) {
 		
 		seconds += ( set.C / rate );
 		rate += set.F;
@@ -17,6 +20,9 @@ var cookie = function(set) {
 	return seconds;
 
 };
+
+//while((X/speed) > (C/speed) + (X/(speed + F))) {
+
 
 /* File Function */
 var run = function(in_file, out_file) { 
